@@ -1,0 +1,13 @@
+# PhysicsList
+/testhadr/Physics QBBC
+
+# Set file name
+/output/FileName out_QBBC.root
+
+# Initialize kernel
+/run/initialize
+
+# Run
+#
+/run/printProgress 100000000
+/run/beamOn 2000000000
