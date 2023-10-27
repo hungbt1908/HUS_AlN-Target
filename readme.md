@@ -1,4 +1,4 @@
-# Proton + Al-N target simulation
+# Proton + Al-N target simulation v1.0
 
 ## ⭐ About this project
 This project was implemented to simulate a proton experiment at HUS. The 1.MeV proton beam boombed a Al-N target along z axis. There are 6 Si detectors placed around target to record parcticles emmited from interaction.
