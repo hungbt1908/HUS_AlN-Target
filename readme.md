@@ -1,18 +1,17 @@
-# G4-IAEA-PhaseSpace
+# Proton + Al-N target simulation
 
 ## ⭐ About this project
-This project includes 2 examples about IAEA routine.
-* G4IAEApsf-Reader
-* G4IAEApsf-Writer
+This project was implemented to simulate a proton experiment at HUS. The 1.MeV proton beam boombed a Al-N target along z axis. There are 6 Si detectors placed around target to record parcticles emmited from interaction.
 
 ## 🔧 Requirements
 * Ubuntu 20.04
 * Geant4.10.07
+* Root data analysis framework
 
 ## 🏃‍♂️ How to run
 - Create a new folder to build example. For example, I created "bld" folder.
     ```c++
-    cd G4IAEApsf-Reader
+    cd HUS_AlN-Target
     mkdir bld
     cd bld
     ```
@@ -23,17 +22,32 @@ This project includes 2 examples about IAEA routine.
     ```
 - Run example in interactive mode
     ```c++
-    ./SimApp
+    ./sim
     ```
 - Run example in batch mode
     ```c++
-    ./SimApp run.mac
+    ./sim run.mac
     ```
 
-## 📒 References
+## 📒 Release Note
+- **12/10/2023**: Release V1.0 for Geant4.11.1.2
+  * **Geometry**: a Target Al-N, and 6 Si detectors
+    ![Alt text](image.png)
+  * **Physics**: using `G4VModularPhysicsList()` and template from example ***extent/hadronic/Hadr01***. You can choose a physics by using command:
 
+    ```
+    /testhadr/Physics physic_name
+    ```
+  * **Primary source**: a 1 MeV proton source have a disk shape with 0.5 mm of radius placed at -1 cm in z axis.
+  * **Scoring**: the deposition energy for each step is stored for each event and accumulates for a run. The results are written to the file in ROOT format. User can use following command to change the name of ROOT file:
+
+    ```
+    /output/FileName out_QBBC.root
+    ```
+- **17/10/2023**: Release V1.1 for Geant4.11.1.2
+--- 
 ## 🚀 About Me
-**Bùi Tiến Hưng**
+**Bùi Tiến Hưng** 
 
 *Master of Science in Nuclear Engineering.*
 
